@@ -23,7 +23,7 @@ def fetch_car_details(reg_plate):
         soup = BeautifulSoup(response.text, "html.parser")
 
         # Scrape the important fields
-        car_make = soup.find("span", text="Make").find_next_sibling("span").text
+        car_make = soup.find("span", string="Make").find_next_sibling("span").string
         car_model = soup.find("span", text="Model").find_next_sibling("span").text
         year = soup.find("span", text="Year of manufacture").find_next_sibling("span").text
         tax_status = soup.find("span", text="Tax Status").find_next_sibling("span").text
